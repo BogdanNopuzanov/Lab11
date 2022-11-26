@@ -16,7 +16,7 @@ jobs:
           pwd
           echo $GITHUB_WORKSPACE
           ls -all TestCasesModified.java
-          find / -name javac
+          echo $JAVA_HOME
           export CLASSPATH="./ojdbc8.jar:./"
           javac TestCase.java
       
