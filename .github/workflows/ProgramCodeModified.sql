@@ -1,7 +1,8 @@
-CREATE TABLE KUser (
-	 user_id INT, -- id користувача
-	 Kname  VARCHAR(15),      -- имя/фамлиия   
-	 Masterstvo NUMBER(2),        -- мастерство   
-	 Phone   VARCHAR(15),         -- телефон
+/* Створення об'єктного типу (класу) My_user */
+CREATE TABLE My_user(
+	user_id INT, -- id користувача
+	full_name VARCHAR(100), -- ПІБ
+	phone VARCHAR(20), -- номер телефону
+	pseudonym VARCHAR(100), -- псевдонім
     	NOT FINAL MEMBER PROCEDURE display
 ) NOT FINAL 
