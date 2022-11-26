@@ -16,12 +16,13 @@ jobs:
           pwd
           echo $GITHUB_WORKSPACE
           ls -all TestCasesModified.java
+          find / -name javac
           export CLASSPATH="./ojdbc8.jar:./"
-          javac TestCasesModified.java
+          javac TestCase.java
       
       - name: Execute
         run: |
           cd $GITHUB_WORKSPACE/
           export CLASSPATH="./ojdbc8.jar:./"
           echo "$env:LOGIN"
-          java TestCasesModified ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
+          java TestCases ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
