@@ -12,9 +12,9 @@ jobs:
       
       - name: Compile
         run: |
-          cd $GITHUB_WORKSPACE/.github/workflows/
+          cd $GITHUB_WORKSPACE
           export CLASSPATH="./ojdbc8.jar:./"
-          javaс TestCases.java
+          javaс $GITHUB_WORKSPACE/.github/workflows/TestCases.java
       
       - name: Execute
         run: |
