@@ -1,15 +1,15 @@
-name: Program Code Linter
+name: ProgramCodeConvention
 on:
   push:
       branches: main
 
 jobs:
-  ProgramCodeLinter:
+  ProgramCodeConvention:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code in Repo
         uses: actions/checkout@v3
-      - name: Lint Program Code
+      - name: Lint ProgramCodeConvention
         uses: github/super-linter@v4
         env:
           VALIDATE_SQL: true
