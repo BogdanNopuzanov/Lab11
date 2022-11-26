@@ -1,4 +1,4 @@
-/* Створення об'єктного типу (класу) My_user */
+
 CREATE TABLE My_user(
 	user_id INT, -- id користувача
 	full_name VARCHAR(100), -- ПІБ
