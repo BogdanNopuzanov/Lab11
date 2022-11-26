@@ -15,15 +15,15 @@ jobs:
           cd $GITHUB_WORKSPACE
           
           echo Compile
-          echo TestCasesModified.yml-test
+          echo $GITHUB_WORKSPACE
           cd $GITHUB_WORKSPACE/.github/workflows/
           pwd
-          echo $GITHUB_WORKSPACE
           ls -all TestCasesModified.java
-          find / -name ocjdbc*.jar
-          echo $JAVA_HOME
+          echo JAVA_HOME: $JAVA_HOME
+          find / -name ocjdbc11.jar 2>&1 | grep -v "Permission denied"
           
           export CLASSPATH="./ojdbc8.jar:./"
+          echo CLASSPATH: $CLASSPATH
           /usr/bin/javac -classpath /usr/bin/ocjdbc17.jar $GITHUB_WORKSPACE/.github/workflows/TestCases.java
       
       - name: Execute
