@@ -12,13 +12,13 @@ jobs:
       
       - name: Compile
         run: |
-          cd $GITHUB_WORKSPACE/
+          cd $GITHUB_WORKSPACE/.github/workflows/
           export CLASSPATH="./ojdbc8.jar:./"
           javaс TestCases.java
       
       - name: Execute
         run: |
-          cd $GITHUB_WORKSPACE/
+          cd $GITHUB_WORKSPACE/.github/workflows/
           export CLASSPATH="./ojdbc8.jar:./"
           echo "$env:LOGIN"
           java TestCases ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
