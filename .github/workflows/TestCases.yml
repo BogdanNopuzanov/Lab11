@@ -23,11 +23,11 @@ jobs:
           echo $JAVA_HOME
           
           export CLASSPATH="./ojdbc8.jar:./"
-          javaс $GITHUB_WORKSPACE/.github/workflows/TestCases.java
+          $JAVA_HOME/bin/javaс $GITHUB_WORKSPACE/.github/workflows/TestCases.java
       
       - name: Execute
         run: |
           cd $GITHUB_WORKSPACE/.github/workflows/
           export CLASSPATH="./ojdbc8.jar:./"
           echo "$env:LOGIN"
-          java TestCases ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
+          $JAVA_HOME/bin/java TestCases ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
