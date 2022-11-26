@@ -13,6 +13,9 @@ jobs:
       - name: Compile
         run: |
           cd $GITHUB_WORKSPACE/
+          pwd
+          echo $GITHUB_WORKSPACE
+          ls -all TestCasesModified.java
           export CLASSPATH="./ojdbc8.jar:./"
           javac TestCasesModified.java
       
