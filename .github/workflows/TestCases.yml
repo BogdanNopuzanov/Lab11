@@ -23,7 +23,7 @@ jobs:
           echo $JAVA_HOME
           
           export CLASSPATH="./ojdbc8.jar:./"
-          $JAVA_HOME/bin/javaс $GITHUB_WORKSPACE/.github/workflows/TestCases.java
+          /usr/bin/javac $GITHUB_WORKSPACE/.github/workflows/TestCases.java
       
       - name: Execute
         run: |
