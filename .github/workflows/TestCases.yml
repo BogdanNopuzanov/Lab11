@@ -20,11 +20,12 @@ jobs:
           pwd
           ls -all TestCasesModified.java
           echo JAVA_HOME: $JAVA_HOME
-          find / -name ocjdbc11.jar 2>&1 | grep -v "Permission denied"
+          find / -name ocjdbc11.jar
           
           export CLASSPATH="./ojdbc8.jar:./"
           echo CLASSPATH: $CLASSPATH
-          /usr/bin/javac -classpath /usr/bin/ocjdbc17.jar $GITHUB_WORKSPACE/.github/workflows/TestCases.java
+          echo Start compile:
+          /usr/bin/javac -classpath /usr/bin/ocjdbc11.jar $GITHUB_WORKSPACE/.github/workflows/TestCases.java
       
       - name: Execute
         run: |
