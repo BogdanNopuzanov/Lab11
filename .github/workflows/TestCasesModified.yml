@@ -12,13 +12,14 @@ jobs:
       
       - name: Compile
         run: |
+          echo TestCasesModified.yml-test
           cd $GITHUB_WORKSPACE/.github/workflows/
           pwd
           echo $GITHUB_WORKSPACE
           ls -all TestCasesModified.java
           echo $JAVA_HOME
           export CLASSPATH="./ojdbc8.jar:./"
-          javac TestCase.java
+          javac TestCaseModified.java
       
       - name: Execute
         run: |
