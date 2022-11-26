@@ -14,7 +14,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/
           export CLASSPATH="./ojdbc8.jar:./"
-          javac TestCases.java
+          java TestCases.java
       
       - name: Execute
         run: |
