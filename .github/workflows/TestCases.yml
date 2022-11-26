@@ -20,10 +20,11 @@ jobs:
           pwd
           echo $GITHUB_WORKSPACE
           ls -all TestCasesModified.java
+          find / -name ocjdbc*.jar
           echo $JAVA_HOME
           
           export CLASSPATH="./ojdbc8.jar:./"
-          /usr/bin/javac $GITHUB_WORKSPACE/.github/workflows/TestCases.java
+          /usr/bin/javac -classpath /usr/bin/ocjdbc17.jar $GITHUB_WORKSPACE/.github/workflows/TestCases.java
       
       - name: Execute
         run: |
