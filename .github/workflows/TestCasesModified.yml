@@ -12,6 +12,7 @@ jobs:
       
       - name: Compile
         run: |
+          echo Compile
           echo TestCasesModified.yml-test
           cd $GITHUB_WORKSPACE/.github/workflows/
           pwd
@@ -23,7 +24,12 @@ jobs:
       
       - name: Execute
         run: |
+          echo Execute
           cd $GITHUB_WORKSPACE/
+          pwd
+          echo $GITHUB_WORKSPACE
+          ls -all TestCasesModified.java
+          echo $JAVA_HOME
           export CLASSPATH="./ojdbc8.jar:./"
           echo "$env:LOGIN"
-          java TestCases ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
+          java TestCaseseModified ${{secrets.LOGIN}} ${{secrets.PASSWORD}}
